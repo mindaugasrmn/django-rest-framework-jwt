@@ -56,7 +56,7 @@ class BaseJSONWebTokenAuthentication(BaseAuthentication):
             raise exceptions.AuthenticationFailed(msg)
 
         try:
-            user = User.objects.get_by_natural_key(username)
+            user = User.objects.get(email=username)
         except User.DoesNotExist:
             msg = _('Invalid signature.')
             raise exceptions.AuthenticationFailed(msg)
