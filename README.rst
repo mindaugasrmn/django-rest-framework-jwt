@@ -1,4 +1,4 @@
-REST framework JWT Auth with Mongodb
+REST framework JWT Auth fork with Mongodb
 =======================
 
 |build-status-image| |pypi-version|
