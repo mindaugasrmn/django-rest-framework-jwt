@@ -1,6 +1,6 @@
-from django.contrib.auth import get_user_model
-
 from rest_framework import serializers
+
+from app.core.users.models import User
 
 
 class Serializer(serializers.Serializer):
@@ -35,3 +35,7 @@ def get_username(user):
         username = user.username
 
     return username
+
+
+def get_user_model():
+    return User
