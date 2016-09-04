@@ -35,6 +35,7 @@ class JSONWebTokenSerializer(Serializer):
         super(JSONWebTokenSerializer, self).__init__(*args, **kwargs)
 
         self.fields[self.username_field] = serializers.CharField()
+        self.fields['gcm_id'] = serializers.CharField(required=False)
         self.fields['password'] = PasswordField(write_only=True)
 
     @property
