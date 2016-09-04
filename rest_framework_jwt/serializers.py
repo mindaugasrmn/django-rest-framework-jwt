@@ -103,7 +103,7 @@ class VerificationBaseSerializer(Serializer):
 
         # Make sure user exists
         try:
-            user = User.objects.get_by_natural_key(username)
+            user = User.objects.get(email=username)
         except User.DoesNotExist:
             msg = _("User doesn't exist.")
             raise serializers.ValidationError(msg)
